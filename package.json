@@ -1,0 +1,19 @@
+{
+  "name": "generator-ez-angular",
+  "version": "0.1.0",
+  "description": "Creates scaffolding for different angular elements.",
+  "files": [
+    "generators/app",
+    "generators/component",
+    "generators/project"
+  ],
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "dependencies": {
+    "yeoman-generator": "^0.24.1"
+  },
+  "main": "app/index.js",
+  "author": "Dale Sparks",
+  "license": "MIT"
+}

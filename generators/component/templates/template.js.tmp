@@ -1,0 +1,30 @@
+(function () {
+    'use strict';
+
+    angular
+        .module('RegisterSite')
+        .directive('<%= camelName %>', <%= camelName %>);
+
+    <%= camelName %>.$inject = [];
+
+    function <%= camelName %>() {
+        // Usage:
+        //      <<%= kebabName %>></<%= kebabName %>>
+        // Creates:
+        //
+        var directive = {
+            controller: Controller,
+            controllerAs: '<%= controllerAs %>',
+            bindToController: {},
+            scope: true,
+            templateUrl: 'scripts/components/<%= kebabName %>/<%= kebabName %>.html',
+            restrict: 'E'
+        };
+
+        return directive;
+    }
+
+    Controller.$inject = [];
+
+    function Controller() {}
+})();
