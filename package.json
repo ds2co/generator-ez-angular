@@ -11,6 +11,7 @@
     "yeoman-generator"
   ],
   "dependencies": {
+    "generator-karma": "^2.0.0",
     "yeoman-generator": "^0.24.1"
   },
   "main": "app/index.js",

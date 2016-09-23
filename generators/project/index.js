@@ -33,7 +33,15 @@ module.exports = generators.Base.extend({
         // remove if not used.
     },
     install: function () {
-
+        this.composeWith('karma:app', {
+            options: {
+                frameworks: ['mocha', 'chai'],
+                browsers: ['Chrome'],
+                'app-files': ['./app/scripts/app.js', './app/scripts/**/*.js'],
+                'bower-components-path': './app/lib',
+                'test-files': ['./test/spec/**/*.js']
+            }
+        });
     },
     end: function (){
         console.log('Done!');
