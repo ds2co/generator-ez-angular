@@ -40,11 +40,6 @@ function copyTemplateFiles(context, path) {
         path.concat('/', context.config.get('kebabName'), '.html'),
         {}
     );
-    context.fs.copyTpl(
-        context.templatePath('template.example.html'),
-        path.concat('/', context.config.get('kebabName'), '.example.html'),
-        context.config.getAll()
-    );
 }
 
 /*
@@ -64,7 +59,6 @@ function createTestFile(context, path) {
 */
 function updateExistingFiles(context) {
     updateHTMLFile(context, paths.index_path);
-    updateHTMLFile(context, paths.examples_path);
 }
 
 /*

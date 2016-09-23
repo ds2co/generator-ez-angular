@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <!-- build:css({.tmp,app}) ./styles/lib.css -->
+
+        <!-- endbuild -->
+
+        <!-- build:css(.tmp) ./styles/main.css -->
+        <link rel="stylesheet" href="styles/main.css">
+        <!-- endbuild -->
+
+        <!-- build:css(app) ./styles/components.css -->
+
+        <!-- endbuild -->
+    </head>
+
+    <body>
+    <!-- build:js(app) ./scripts/deps.js -->
+    <!-- These are dependencies that are pre-requisites and rooted under /app -->
+
+    <!-- endbuild -->
+
+    <!-- build:js(app) ./scripts/vendor.js -->
+    <!-- These are angular-related dependencies that are pre-requisites and rooted under /app -->
+
+    <!-- endbuild -->
+
+    <!-- build:js({.tmp,app}) ./scripts/scripts.js -->
+    <!-- These are application specific files that are rooted under /app or /.tmp -->
+    <script src="scripts/app.js"></script>
+
+    <!-- endbuild -->
+
+    </body>
+</html>

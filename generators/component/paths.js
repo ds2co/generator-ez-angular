@@ -24,6 +24,5 @@ module.exports = {
     configureDestinationPath: configureDestinationPath,
     path_to_components: './app/scripts/components',
     path_to_test_directory: './test/spec/components',
-    index_path: './app/index.html',
-    examples_path: './app/scripts/examples.html'
+    index_path: './app/index.html'
 };
