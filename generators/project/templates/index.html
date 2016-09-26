@@ -1,24 +1,29 @@
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <!-- build:css({.tmp,app}) ./styles/lib.css -->
+<head>
+    <!-- build:css({.tmp,app}) ./styles/lib.css -->
 
-        <!-- endbuild -->
+    <!-- endbuild -->
 
-        <!-- build:css(.tmp) ./styles/main.css -->
-        <link rel="stylesheet" href="styles/main.css">
-        <!-- endbuild -->
+    <!-- build:css(.tmp) ./styles/main.css -->
+    <link rel="stylesheet" href="app/styles/main.css">
+    <!-- endbuild -->
 
-        <!-- build:css(app) ./styles/components.css -->
+    <!-- build:css(app) ./styles/components.css -->
 
-        <!-- endbuild -->
-    </head>
+    <!-- endbuild -->
+</head>
 
-    <body>
+<body ng-app="<%= module %>">
+
+    <div ng-view></div>
+
     <!-- build:js(app) ./scripts/deps.js -->
     <!-- These are dependencies that are pre-requisites and rooted under /app -->
-
+    <script src="app/lib/angular/angular.min.js"></script>
+    <script src="app/lib/angular-route/angular-route.min.js"></script>
+    <script src="app/lib/lodash/dist/lodash.min.js"></script>
     <!-- endbuild -->
 
     <!-- build:js(app) ./scripts/vendor.js -->
@@ -28,9 +33,10 @@
 
     <!-- build:js({.tmp,app}) ./scripts/scripts.js -->
     <!-- These are application specific files that are rooted under /app or /.tmp -->
-    <script src="scripts/app.js"></script>
+    <script src="app/scripts/app.js"></script>
 
+    <script src="app/scripts/components/home/home.js"></script>
     <!-- endbuild -->
 
-    </body>
+</body>
 </html>

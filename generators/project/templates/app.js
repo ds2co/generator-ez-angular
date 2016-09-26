@@ -2,14 +2,22 @@
     'use strict';
 
     angular
-        .module('<%= module %>', [])
+        .module('<%= module %>', [
+            'ngRoute'
+        ])
         .config(config);
 
-    config.$inject = ['$compileProvider'];
+    config.$inject = ['$routeProvider', '$compileProvider'];
 
-    function config($compileProvider) {
+    function config($routeProvider, $compileProvider) {
+        // Routing
+        $routeProvider
+            .when('/',{
+                template: '<home></home>'
+            });
+
         // to improve performance. (this removes the jquery .data() binding
-        //      of angular data
+        //      of angular data)
         $compileProvider.debugInfoEnabled(false);
     }
 })(window.angular);

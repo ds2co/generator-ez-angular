@@ -52,7 +52,8 @@ module.exports = generators.Base.extend({
                 this.composeWith('ez-angular:project');
                 break;
             case 'component':
-                this.composeWith('ez-angular:component');
+                //this.composeWith('ez-angular:component');
+                console.log(chalk.cyan('\nCurrently being updated!.\n'));
                 break;
             case 'module':
             case 'service':

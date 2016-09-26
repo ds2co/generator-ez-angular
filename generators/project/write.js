@@ -25,13 +25,69 @@ function setupDirectoryStructure() {
 }
 
 function createDefaultFiles() {
-    createHTMLfromTemplate();
+    createHtmlFromTemplate();
+    createJsFromTemplate();
+    createOtherFromTemplate();
+    setupInitialComponent();
 }
 
-function createHTMLfromTemplate() {
+function createHtmlFromTemplate() {
     context.fs.copyTpl(
         context.templatePath('index.html'),
-        context.destinationPath(paths.indexFile),
+        context.destinationPath('index.html'),
+        {
+            module: context.config.get('module')
+        }
+    );
+}
+
+function createJsFromTemplate() {
+    context.fs.copyTpl(
+        context.templatePath('app.js'),
+        context.destinationPath(paths.appJsFile),
+        {
+            module: context.config.get('module')
+        }
+    );
+}
+
+function createOtherFromTemplate() {
+    // css
+    context.fs.copyTpl(
+        context.templatePath('main.css'),
+        context.destinationPath(paths.mainCssFile),
         {}
+    );
+    //.bowerrc
+    context.fs.copyTpl(
+        context.templatePath('.bowerrc'),
+        context.destinationPath(paths.bowerRcFile),
+        {}
+    );
+}
+
+function setupInitialComponent(){
+    mkdirp.sync(context.destinationPath(paths.initialComponentFolder));
+
+    context.fs.copyTpl(
+        context.templatePath('home.js'),
+        context.destinationPath(paths.initialComponentFolder.concat('/home.js')),
+        {
+            module: context.config.get('module')
+        }
+    );
+
+    context.fs.copyTpl(
+        context.templatePath('home.html'),
+        context.destinationPath(paths.initialComponentFolder.concat('/home.html')),
+        { }
+    );
+
+    context.fs.copyTpl(
+        context.templatePath('home.spec.js'),
+        context.destinationPath(paths.test_spec_folder.concat('/components/home.spec.js')),
+        {
+            module: context.config.get('module')
+        }
     );
 }

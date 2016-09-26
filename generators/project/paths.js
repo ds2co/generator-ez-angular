@@ -26,7 +26,9 @@ var app_folder = './app',
 module.exports = {
     app: [].concat(app_elements, app_scripts_elements),
     test: [].concat(test_spec_elements),
-    indexFile: app_folder.concat('/index.html'),
     mainCssFile: app_folder.concat('/styles/main.css'),
-    karmaFile: './test/karma.config.js'
+    appJsFile: scripts_folder.concat('/app.js'),
+    bowerRcFile: '/.bowerrc',
+    initialComponentFolder: scripts_folder.concat('/components/home'),
+    test_spec_folder: test_spec_folder
 };
