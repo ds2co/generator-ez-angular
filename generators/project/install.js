@@ -10,27 +10,44 @@ module.exports = {
 function installKarma(c) {
     c.composeWith('karma:app', {
         options: {
+            'base-path': '../',
             frameworks: ['mocha', 'chai'],
             browsers: ['Chrome'],
-            'app-files': ['./app/scripts/app.js', './app/scripts/**/**/*.js'],
-            'bower-components-path': './app/lib',
-            'test-files': ['./test/spec/**/**/*.js']
+            'app-files': [
+                './app/lib/angular/angular.js',
+                './app/lib/angular-mocks/angular-mocks.js',
+                './app/lib/angular-route/angular-route.js',
+                './app/scripts/app.js',
+                './app/scripts/**/*.js',
+                '**/*.html'
+            ],
+            'test-files': ['./test/spec/**/*.js']
         }
     });
 }
 
-function installDependencies(c) {
+function installDependencies(c, done) {
     context = c;
+    installNpmDeps();
     installFrontEndDeps();
+    done();
+}
+
+function installNpmDeps() {
+    context.npmInstall(['mocha', 'chai', 'karma'], { 'saveDev': true });
+    context.npmInstall(['karma-mocha', 'karma-chai', 'generator-ez-angular'], { 'saveDev': true });
+    context.npmInstall(['express', 'path'], { 'save': true });
 }
 
 function installFrontEndDeps() {
-    var plugins = [
+    var bower_plugins = [
         'angular',
         'angular-mocks',
         'angular-route',
-        'lodash'
+        'lodash',
+        'jquery',
+        context.config.get('css')
     ];
 
-    context.bowerInstall(plugins);
+    context.bowerInstall(bower_plugins);
 }

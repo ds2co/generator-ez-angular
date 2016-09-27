@@ -29,6 +29,7 @@ module.exports = {
     mainCssFile: app_folder.concat('/styles/main.css'),
     appJsFile: scripts_folder.concat('/app.js'),
     bowerRcFile: '/.bowerrc',
+    indexFile: app_folder.concat('/index.html'),
     initialComponentFolder: scripts_folder.concat('/components/home'),
     test_spec_folder: test_spec_folder
 };

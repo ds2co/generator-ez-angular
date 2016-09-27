@@ -29,15 +29,14 @@ function createDefaultFiles() {
     createJsFromTemplate();
     createOtherFromTemplate();
     setupInitialComponent();
+    copyServerFile();
 }
 
 function createHtmlFromTemplate() {
     context.fs.copyTpl(
         context.templatePath('index.html'),
-        context.destinationPath('index.html'),
-        {
-            module: context.config.get('module')
-        }
+        context.destinationPath(paths.indexFile),
+        context.config.getAll()
     );
 }
 
@@ -89,5 +88,13 @@ function setupInitialComponent(){
         {
             module: context.config.get('module')
         }
+    );
+}
+
+function copyServerFile() {
+    context.fs.copyTpl(
+        context.templatePath('server.js'),
+        context.destinationPath('server.js'),
+        { }
     );
 }

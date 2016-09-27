@@ -24,7 +24,7 @@ function promptForNewProject(context, done) {
             type: 'list',
             name: 'cssFramework',
             message: 'Would you like to use Bootstrap or SemanticUI?',
-            choices: ['Bootstrap', 'SemanticUI', 'neither']
+            choices: ['Bootstrap', 'Semantic', 'neither']
         }
     ]).then(function(answers) {
         answers.moduleName = removedSpacing(answers.moduleName);

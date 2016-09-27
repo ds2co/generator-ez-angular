@@ -3,11 +3,12 @@
 <html>
 <head>
     <!-- build:css({.tmp,app}) ./styles/lib.css -->
-
+    <link rel="stylesheet" href="<%= cssFrameworkIncludeCSS %>">
     <!-- endbuild -->
 
     <!-- build:css(.tmp) ./styles/main.css -->
-    <link rel="stylesheet" href="app/styles/main.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="lib/semantic">
     <!-- endbuild -->
 
     <!-- build:css(app) ./styles/components.css -->
@@ -21,21 +22,22 @@
 
     <!-- build:js(app) ./scripts/deps.js -->
     <!-- These are dependencies that are pre-requisites and rooted under /app -->
-    <script src="app/lib/angular/angular.min.js"></script>
-    <script src="app/lib/angular-route/angular-route.min.js"></script>
-    <script src="app/lib/lodash/dist/lodash.min.js"></script>
+    <script src="lib/jquery/dist/jquery.min.js"></script>
+    <script src="<%= cssFrameworkIncludeJS %>"></script>
+    <script src="lib/lodash/dist/lodash.min.js"></script>
+    <script src="lib/angular/angular.min.js"></script>
     <!-- endbuild -->
 
     <!-- build:js(app) ./scripts/vendor.js -->
     <!-- These are angular-related dependencies that are pre-requisites and rooted under /app -->
-
+    <script src="lib/angular-route/angular-route.min.js"></script>
     <!-- endbuild -->
 
     <!-- build:js({.tmp,app}) ./scripts/scripts.js -->
     <!-- These are application specific files that are rooted under /app or /.tmp -->
-    <script src="app/scripts/app.js"></script>
+    <script src="scripts/app.js"></script>
 
-    <script src="app/scripts/components/home/home.js"></script>
+    <script src="scripts/components/home/home.js"></script>
     <!-- endbuild -->
 
 </body>

@@ -33,9 +33,14 @@ module.exports = generators.Base.extend({
     conflicts: function () {
         // remove if not used.
     },
-    install: function () {
-        install.installDependencies(this);
-        install.installKarma(this);
+    install: {
+        method1: function () {
+            var done = this.async();
+            install.installDependencies(this, done);
+        },
+        method2: function () {
+            install.installKarma(this);
+        }
     },
     end: function (){
         console.log('Done!');

@@ -17,7 +17,7 @@
             controllerAs: 'home',
             bindToController: {},
             scope: true,
-            templateUrl: 'app/scripts/components/home/home.html',
+            templateUrl: 'scripts/components/home/home.html',
             restrict: 'E'
         };
 
